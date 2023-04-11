@@ -1,0 +1,115 @@
+:root {
+    --light:#F5F5F5;
+    --dark:#212121;
+    --brown:#372F25;
+    --red:#FD3E3E;
+    --orange:#FFAA48;
+    --green:#27C86D;
+  }
+  
+  *, *::before, *::after { box-sizing:border-box }
+  
+  body {
+      margin:0;
+    
+    background-color:var(--dark);
+    color:var(--light);
+    font-family: Helvetica, Arial, sans-serif;
+    
+    
+  }
+  
+  .app {
+    text-align:center;
+    display:grid;
+    place-items:center;
+    min-height:100vh;
+  }
+  
+  .metric-group {
+    display:flex;
+  }
+  
+  .metric {
+    margin:10px;
+    max-width:90px;
+    display:grid;
+    gap:16px;
+    place-items:center;
+    
+    .label {
+      font-weight:700;
+      font-size:0.9rem;
+    }
+  }
+  
+  
+  .circle-chart {
+    
+    --selected-color: var(--green);
+    
+    color:var(--selected-color);
+    width:75px;
+    display:grid;
+    place-items:center;
+    
+    > * {
+      grid-column: 1 / -1;
+      grid-row: 1 / -1;
+    }
+    
+    .circle-bg {
+      fill: var(--brown);
+      stroke: var(--brown);
+      stroke-width: 2.8;
+    }
+  
+    .circle {
+      fill: none;
+      stroke: var(--selected-color);
+      stroke-width: 2.8;
+      stroke-linecap: round;
+      animation: progress 1.2s ease-in-out forwards;
+      
+    }
+    
+    .percentage {
+      font-family: Monaco, monospace;
+      font-weight:bold;
+      font-size: 1.4rem;
+    }
+    
+  }
+  
+  .app-editor {
+    align-self:end;
+    margin-bottom:50px;
+  }
+  
+  @keyframes progress {
+    0% {
+      stroke-dasharray: 0 100;
+    }
+  }
+  
+  input, button {
+    font-size:1.2rem;
+    font-weight:700;
+    padding:12px;
+    background-color:var(--brown);
+    color:var(--light);
+    border:none;
+    margin:5px 2px;
+  }
+  
+  button {
+    background-color:var(--brown);
+    border-radius:100px;
+    aspect-ratio:1;
+    width:45px;
+    
+    &:hover, &:focus, &:active {
+      background-color:var(--red);
+      cursor:pointer;
+    }
+  }
