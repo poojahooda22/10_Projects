@@ -2,6 +2,7 @@
   background: #36383c;
   height: 100vh;
   text-align: center;
+  justify-content: center;
   
 }
 
@@ -31,7 +32,7 @@
 
 .button-glow:before {
   content: "";
-  background: linear-gradient( #14ffe9, #ffeb3b, #ff00e0);
+  background: linear-gradient( #14ffe9, #ffeb3b, #c23fb2);
   position: absolute;
   background-size: 300%;
   z-index: -1;
@@ -67,6 +68,7 @@
 
 @keyframes rotate {
   0% {filter: hue-rotate(0deg);}
+  50% {filter: hue-rotate(90deg);}
  
-  100% {filter: hue-rotate(360deg);}
+  100% {filter: hue-rotate(270deg);}
 }
